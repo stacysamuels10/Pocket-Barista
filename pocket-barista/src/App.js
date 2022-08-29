@@ -5,6 +5,7 @@ import Data from "./components/data/Data";
 import SavedCoffee from "./components/savedItems/SavedCoffees";
 import SavedGrinders from "./components/savedItems/SavedGrinders";
 import SavedBrewers from "./components/savedItems/SavedBrewers";
+import SavedCups from "./components/savedItems/SavedCups";
 import AeropressBrewGuide from "./components/brewGuides/AeropressBrewGuide";
 import ChemexBrewGuide from "./components/brewGuides/ChemexBrewGuide";
 import ColdBrewBrewGuide from "./components/brewGuides/ColdBrewBrewGuide";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/brewoptions" element={<AddNewCup />}></Route>
           <Route path="/data" element={<Data />}></Route>
           <Route path="/coffee" element={<SavedCoffee />}></Route>
+          <Route path="/cups" element={<SavedCups />}></Route>
           <Route path="/grinders" element={<SavedGrinders />}></Route>
           <Route path="/brewers" element={<SavedBrewers />}></Route>
           <Route

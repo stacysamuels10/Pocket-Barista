@@ -15,7 +15,7 @@ const SavedCoffees = () => {
             <p>{bag.bagOfCoffee.about.rating}</p>
             <p>{bag.bagOfCoffee.details.roastLevel}</p>
             <p>{bag.bagOfCoffee.details.beanProcess}</p>
-            <button onClick={() => navigate("/addnewcoffee")}>More Info</button>
+            <button onClick={() => navigate("/")}>More Info</button>
           </>
         ))}
         <div className="new-coffee">

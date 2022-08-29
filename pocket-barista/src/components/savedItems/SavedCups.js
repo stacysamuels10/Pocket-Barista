@@ -15,6 +15,7 @@ const SavedCups = () => {
             <p>{cup.brewedCup.brew.waterAmount}</p>
             <p>{cup.brewedCup.brew.rating}</p>
             <p>{cup.brewedCup.setup.dateOfBrew}</p>
+            <button onClick={() => navigate("/")}>More Info</button>
           </>
         ))}
       </div>
