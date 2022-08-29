@@ -16,6 +16,11 @@ const SavedBrewers = () => {
           </>
         ))}
       </div>
+      <div className="add-new">
+        <button onClick={() => navigate("/addnewbrewer")}>
+          Add New Brewer
+        </button>
+      </div>
     </div>
   );
 };

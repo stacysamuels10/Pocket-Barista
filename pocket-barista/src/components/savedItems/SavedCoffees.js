@@ -19,7 +19,9 @@ const SavedCoffees = () => {
           </>
         ))}
         <div className="new-coffee">
-          <button>Add New Coffee</button>
+          <button onClick={() => navigate("/addnewcoffee")}>
+            Add New Coffee
+          </button>
         </div>
       </div>
     </div>

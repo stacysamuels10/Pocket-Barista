@@ -1,11 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
-import AddNewCup from "./components/addNew/AddNewCup";
 import Data from "./components/data/Data";
 import SavedCoffee from "./components/savedItems/SavedCoffees";
 import SavedGrinders from "./components/savedItems/SavedGrinders";
 import SavedBrewers from "./components/savedItems/SavedBrewers";
 import SavedCups from "./components/savedItems/SavedCups";
+import AddNewCup from "./components/addNew/AddNewCup";
+import AddNewCoffee from "./components/addNew/AddNewCoffee";
+import AddNewBrewer from "./components/addNew/AddNewBrewer";
+import AddNewGrinder from "./components/addNew/AddNewGrinder";
 import AeropressBrewGuide from "./components/brewGuides/AeropressBrewGuide";
 import ChemexBrewGuide from "./components/brewGuides/ChemexBrewGuide";
 import ColdBrewBrewGuide from "./components/brewGuides/ColdBrewBrewGuide";
@@ -15,7 +18,6 @@ import FrenchPressBrewGuide from "./components/brewGuides/FrenchPressBrewGuide";
 import MokaPotBrewGuide from "./components/brewGuides/MokaPotBrewGuide";
 import V60BrewGuide from "./components/brewGuides/V60BrewGuide";
 import BrewGuideMain from "./components/BrewGuideMain";
-import AddNewCoffee from "./components/addNew/AddNewCoffee";
 import "./App.css";
 
 function App() {
@@ -24,12 +26,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
-          <Route path="/brewoptions" element={<AddNewCup />}></Route>
           <Route path="/data" element={<Data />}></Route>
           <Route path="/coffee" element={<SavedCoffee />}></Route>
           <Route path="/cups" element={<SavedCups />}></Route>
           <Route path="/grinders" element={<SavedGrinders />}></Route>
           <Route path="/brewers" element={<SavedBrewers />}></Route>
+          <Route path="/addnewbrew" element={<AddNewCup />}></Route>
+          <Route path="/addnewcoffee" element={<AddNewCoffee />}></Route>
+          <Route path="/addnewbrewer" element={<AddNewBrewer />}></Route>
+          <Route path="/addnewgrinder" element={<AddNewGrinder />}></Route>
           <Route
             path="/aeropressguide"
             element={<AeropressBrewGuide />}
@@ -45,7 +50,6 @@ function App() {
           <Route path="/mokapotguide" element={<MokaPotBrewGuide />}></Route>
           <Route path="/v60guide" element={<V60BrewGuide />}></Route>
           <Route path="/brewguides" element={<BrewGuideMain />}></Route>
-          <Route path="/addnewcoffee" element={<AddNewCoffee />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

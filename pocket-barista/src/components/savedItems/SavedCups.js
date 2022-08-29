@@ -19,6 +19,9 @@ const SavedCups = () => {
           </>
         ))}
       </div>
+      <div className="add-new">
+        <button onClick={() => navigate("/addnewbrew")}>Add New Brew</button>
+      </div>
     </div>
   );
 };
