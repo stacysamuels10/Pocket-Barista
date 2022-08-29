@@ -28,7 +28,7 @@ const initialState = {
         brew: {
           groundsAmount: "19",
           grindSetting: "13",
-          waterAmount: "300",
+          waterAmount: "300g",
           waterTemperature: "208",
           brewTime: "180",
           rating: "5",
@@ -47,7 +47,7 @@ const initialState = {
         brew: {
           groundsAmount: "19",
           grindSetting: "13",
-          waterAmount: "300",
+          waterAmount: "300g",
           waterTemperature: "208",
           brewTime: "180",
           rating: "5",
@@ -66,7 +66,7 @@ const initialState = {
         brew: {
           groundsAmount: "17",
           grindSetting: "8",
-          waterAmount: "30",
+          waterAmount: "30g",
           waterTemperature: "208",
           brewTime: "140",
           rating: "5",
@@ -85,7 +85,7 @@ const initialState = {
         brew: {
           groundsAmount: "19",
           grindSetting: "13",
-          waterAmount: "300",
+          waterAmount: "300g",
           waterTemperature: "208",
           brewTime: "180",
           rating: "5",
@@ -104,7 +104,7 @@ const initialState = {
         brew: {
           groundsAmount: "19",
           grindSetting: "13",
-          waterAmount: "300",
+          waterAmount: "300g",
           waterTemperature: "208",
           brewTime: "180",
           rating: "5",

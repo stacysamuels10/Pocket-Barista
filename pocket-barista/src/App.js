@@ -14,6 +14,7 @@ import FrenchPressBrewGuide from "./components/brewGuides/FrenchPressBrewGuide";
 import MokaPotBrewGuide from "./components/brewGuides/MokaPotBrewGuide";
 import V60BrewGuide from "./components/brewGuides/V60BrewGuide";
 import BrewGuideMain from "./components/BrewGuideMain";
+import AddNewCoffee from "./components/addNew/AddNewCoffee";
 import "./App.css";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/mokapotguide" element={<MokaPotBrewGuide />}></Route>
           <Route path="/v60guide" element={<V60BrewGuide />}></Route>
           <Route path="/brewguides" element={<BrewGuideMain />}></Route>
+          <Route path="/addnewcoffee" element={<AddNewCoffee />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
