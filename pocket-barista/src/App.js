@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import AddNewCup from "./components/addNew/AddNewCup";
@@ -15,6 +14,7 @@ import FrenchPressBrewGuide from "./components/brewGuides/FrenchPressBrewGuide";
 import MokaPotBrewGuide from "./components/brewGuides/MokaPotBrewGuide";
 import V60BrewGuide from "./components/brewGuides/V60BrewGuide";
 import BrewGuideMain from "./components/BrewGuideMain";
+import "./App.css";
 
 function App() {
   return (

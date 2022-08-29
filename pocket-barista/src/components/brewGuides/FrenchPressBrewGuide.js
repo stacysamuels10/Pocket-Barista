@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const FrenchPressBrewGuide = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="top-title">
-        <button>Home</button>
+        <button onClick={() => navigate("/")}>Home</button>
         <h1>French Press</h1>
       </div>
       <div className="brew-guide-title">

@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MokaPotBrewGuide = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="top-title">
-        <button>Home</button>
+        <button onClick={() => navigate("/")}>Home</button>
         <h1>Moka Pot</h1>
       </div>
       <div className="brew-guide-title">
