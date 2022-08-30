@@ -25,7 +25,7 @@ const initialState = {
           rating: "4",
         },
         details: {
-          beanType: "Whole",
+          beanType: "Bean",
           roastLevel: "Medium",
           beanProcess: "Washed",
           bagAmount: "12oz",
@@ -43,7 +43,7 @@ const initialState = {
           rating: "4",
         },
         details: {
-          beanType: "Whole",
+          beanType: "Bean",
           roastLevel: "Dark",
           beanProcess: "Washed",
           bagAmount: "16oz",
@@ -61,7 +61,7 @@ const initialState = {
           rating: "3",
         },
         details: {
-          beanType: "Whole",
+          beanType: "Bean",
           roastLevel: "Dark",
           beanProcess: "Washed",
           bagAmount: "12oz",
@@ -79,7 +79,7 @@ const initialState = {
           rating: "5",
         },
         details: {
-          beanType: "Whole",
+          beanType: "Bean",
           roastLevel: "Light",
           beanProcess: "Natural",
           bagAmount: "12oz",
@@ -97,7 +97,7 @@ const initialState = {
           rating: "5",
         },
         details: {
-          beanType: "Whole",
+          beanType: "Bean",
           roastLevel: "Medium",
           beanProcess: "Honey",
           bagAmount: "12oz",

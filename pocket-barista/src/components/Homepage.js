@@ -1,14 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import NavBar from "./NavBar";
 import { useSelector, useDispatch } from "react-redux";
+import SavedCups from "./savedItems/SavedCups";
 
 const Homepage = () => {
   const navigate = useNavigate();
   return (
     <div>
-      Homepage
-      <div className="brewHistory"></div>
+      <div className="brewHistory">
+        <h1>Previous Brews</h1>
+        <SavedCups />
+      </div>
       <div className="brewGuides">
         <h1>Brew Guides</h1>
         <button onClick={() => navigate("/aeropressguide")}>Aeropress</button>
@@ -24,8 +26,10 @@ const Homepage = () => {
         <button onClick={() => navigate("/mokapotguide")}>Moka Pot</button>
         <button onClick={() => navigate("/v60guide")}>V60 Pour Over</button>
       </div>
-      <div className="brewTypes"></div>
-      <NavBar />
+      <div className="coffeeOfTheMonth">
+        <h1>Coffees of the Month</h1>
+        <img src="" alt="" />
+      </div>
     </div>
   );
 };

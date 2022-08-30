@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const AddNewCup = () => {
+  const coffee = useSelector((state) => state.coffeeReducer.pastCoffeeBags);
+  const grinders = useSelector((state) => state.grinderReducer.grinderPantry);
+  const brewers = useSelector((state) => state.brewerReducer.brewerPantry);
   return (
     <div>
       <div className="title">
@@ -11,16 +15,33 @@ const AddNewCup = () => {
       <div className="setup">
         <h3>The Setup:</h3>
         <label htmlFor="coffee">Coffee: </label>
-        <Link to="/coffee" name="coffee">
-          Select
+        <select name="coffee" id="">
+          {coffee.map((bag) => (
+            <option value={bag.bagOfCoffee.about.name}>
+              {bag.bagOfCoffee.about.name}
+            </option>
+          ))}
+        </select>
+        <Link to="/addnewcoffee" name="newcoffee">
+          Add New Coffee
         </Link>
         <label htmlFor="grinder">Grinder: </label>
-        <Link to="/grinders" name="grinder">
-          Select
+        <select name="grinder" id="">
+          {grinders.map((grinder) => (
+            <option value={grinder.grinder.name}>{grinder.grinder.name}</option>
+          ))}
+        </select>
+        <Link to="/addnewgrinder" name="grinder">
+          Add New Grinder
         </Link>
         <label htmlFor="brewer">Brewer: </label>
-        <Link to="/brewers" name="brewer">
-          Select
+        <select name="brewer" id="">
+          {brewers.map((brewer) => (
+            <option value={brewer.brewer.name}>{brewer.brewer.name}</option>
+          ))}
+        </select>
+        <Link to="/addnewbrewer" name="brewer">
+          Add New Brewer
         </Link>
         <label htmlFor="date">Date Of Brew:</label>
         <input type="date" name="date" id="" />

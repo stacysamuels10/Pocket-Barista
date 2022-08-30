@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <div>
       <button onClick={() => navigate("/")}>Home</button>
-      <button onClick={() => navigate("/brewoptions")}>Brews</button>
+      <button onClick={() => navigate("/addnewbrew")}>New Brew</button>
       <button onClick={() => navigate("/brewguides")}>Guides</button>
       <button onClick={() => navigate("/data")}>Data</button>
     </div>

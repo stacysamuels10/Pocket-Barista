@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
 import Data from "./components/data/Data";
 import SavedCoffee from "./components/savedItems/SavedCoffees";
@@ -51,6 +52,7 @@ function App() {
           <Route path="/v60guide" element={<V60BrewGuide />}></Route>
           <Route path="/brewguides" element={<BrewGuideMain />}></Route>
         </Routes>
+        <NavBar></NavBar>
       </BrowserRouter>
     </div>
   );
