@@ -3,7 +3,7 @@ export const NewCoffeeState = (dispatch, bagOfCoffee) => {
 };
 
 export const setName = (dispatch, text) => {
-  dispatch({ type: "SET_COFFEE", payload: text });
+  dispatch({ type: "SET_NAME", payload: text });
 };
 
 export const setRoaster = (dispatch, text) => {
