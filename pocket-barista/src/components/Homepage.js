@@ -2,6 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import SavedCups from "./savedItems/SavedCups";
+import blkandbold from "../assets/blkandbold.png";
+import driftaway from "../assets/driftaway.jpeg";
+import nostalgia from "../assets/nostalgia.png";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -28,7 +31,11 @@ const Homepage = () => {
       </div>
       <div className="coffeeOfTheMonth">
         <h1>Coffees of the Month</h1>
-        <img src="" alt="" />
+        <a href="https://blkandbold.com/">
+          <img src={blkandbold} alt="" />
+        </a>
+        <img src={driftaway} alt="" />
+        <img src={nostalgia} alt="" />
       </div>
     </div>
   );

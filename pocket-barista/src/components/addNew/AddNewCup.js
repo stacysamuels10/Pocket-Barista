@@ -1,8 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import {
+  NewBrewState,
+  setCoffee,
+  setGrinder,
+  setBrewer,
+  setDate,
+  setGroundsAmount,
+  setGrindSetting,
+  setWaterAmount,
+  setWaterTemperature,
+  setBrewTime,
+  setRating,
+  setNotes,
+} from "../../actions/addNewCupFunctions";
 
 const AddNewCup = () => {
+  const dispatch = useDispatch();
   const coffee = useSelector((state) => state.coffeeReducer.pastCoffeeBags);
   const grinders = useSelector((state) => state.grinderReducer.grinderPantry);
   const brewers = useSelector((state) => state.brewerReducer.brewerPantry);
