@@ -6,6 +6,8 @@ import SavedCoffee from "./components/savedItems/SavedCoffees";
 import SavedGrinders from "./components/savedItems/SavedGrinders";
 import SavedBrewers from "./components/savedItems/SavedBrewers";
 import SavedCups from "./components/savedItems/SavedCups";
+import ViewCup from "./components/data/ViewCup";
+import ViewCoffee from "./components/data/ViewCoffee";
 import AddNewCup from "./components/addNew/AddNewCup";
 import AddNewCoffee from "./components/addNew/AddNewCoffee";
 import AddNewBrewer from "./components/addNew/AddNewBrewer";
@@ -29,7 +31,9 @@ function App() {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/data" element={<Data />}></Route>
           <Route path="/coffee" element={<SavedCoffee />}></Route>
+          <Route path="/coffee/:id" element={<ViewCoffee />}></Route>
           <Route path="/cups" element={<SavedCups />}></Route>
+          <Route path="/cups/:id" element={<ViewCup />}></Route>
           <Route path="/grinders" element={<SavedGrinders />}></Route>
           <Route path="/brewers" element={<SavedBrewers />}></Route>
           <Route path="/addnewbrew" element={<AddNewCup />}></Route>

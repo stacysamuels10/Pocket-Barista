@@ -41,10 +41,20 @@ const initialState = {
       },
     },
   ],
+  counter: 0,
 };
 
 const brewerReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "SET_BREWER":
+      initialState.brewerPantry.unshift({ brewer: action.payload });
+      return initialState;
+    case "SET_BREWER_NAME":
+      return { ...state, brewer: { ...state.brewer, name: action.payload } };
+    case "SET_BREWER_BRAND":
+      return { ...state, brewer: { ...state.brewer, brand: action.payload } };
+    case "SET_BREWER_TYPE":
+      return { ...state, brewer: { ...state.brewer, type: action.payload } };
     default:
       return state;
   }

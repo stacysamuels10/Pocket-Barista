@@ -113,10 +113,102 @@ const initialState = {
       },
     },
   ],
+  counter: 0,
 };
 
 const brewedCupReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "SET_BREWED_CUP":
+      initialState.pastBrews.unshift({ brewedCup: action.payload });
+      return initialState;
+    case "SET_COFFEE":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          setup: { ...state.brewedCup.setup, coffee: action.payload },
+        },
+      };
+    case "SET_GRINDER":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          setup: { ...state.brewedCup.setup, grinder: action.payload },
+        },
+      };
+    case "SET_BREWER":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          setup: { ...state.brewedCup.setup, brewer: action.payload },
+        },
+      };
+    case "SET_DATE":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          setup: { ...state.brewedCup.setup, dateOfBrew: action.payload },
+        },
+      };
+    case "SET_GROUNDS_AMOUNT":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          brew: { ...state.brewedCup.brew, groundsAmount: action.payload },
+        },
+      };
+    case "SET_GRIND_SETTING":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          brew: { ...state.brewedCup.brew, grindSetting: action.payload },
+        },
+      };
+    case "SET_WATER_AMOUNT":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          brew: { ...state.brewedCup.brew, waterAmount: action.payload },
+        },
+      };
+    case "SET_WATER_TEMP":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          brew: { ...state.brewedCup.brew, waterTemperature: action.payload },
+        },
+      };
+    case "SET_BREW_TIME":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          brew: { ...state.brewedCup.brew, brewTime: action.payload },
+        },
+      };
+    case "SET_RATING":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          brew: { ...state.brewedCup.brew, rating: action.payload },
+        },
+      };
+    case "SET_NOTES":
+      return {
+        ...state,
+        brewedCup: {
+          ...state.brewedCup,
+          notes: action.payload,
+        },
+      };
     default:
       return state;
   }

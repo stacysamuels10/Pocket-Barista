@@ -13,6 +13,7 @@ const SavedBrewers = () => {
             <p>{brewer.brewer.name}</p>
             <p>{brewer.brewer.brand}</p>
             <p>{brewer.brewer.type}</p>
+            <button>Delete Brewer</button>
           </>
         ))}
       </div>

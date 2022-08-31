@@ -8,11 +8,25 @@ import nostalgia from "../assets/nostalgia.png";
 
 const Homepage = () => {
   const navigate = useNavigate();
+  const cups = useSelector((state) => state.brewedCupReducer.pastBrews);
   return (
     <div>
       <div className="brewHistory">
-        <h1>Previous Brews</h1>
-        <SavedCups />
+        <h1>Most Recent Brews</h1>
+        {cups
+          .filter((cup, index) => index < 5)
+          .map((cup) => (
+            <>
+              <p>{cup.brewedCup.setup.brewer}</p>
+              <p>{cup.brewedCup.setup.coffee}</p>
+              <p>{cup.brewedCup.brew.waterAmount}</p>
+              <p>{cup.brewedCup.brew.rating}</p>
+              <p>{cup.brewedCup.setup.dateOfBrew}</p>
+              <button onClick={() => navigate("/", (cup = { cup }))}>
+                More Info
+              </button>
+            </>
+          ))}
       </div>
       <div className="brewGuides">
         <h1>Brew Guides</h1>

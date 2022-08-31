@@ -8,14 +8,17 @@ const SavedCups = () => {
   return (
     <div>
       <div className="past-cups">
-        {cups.map((cup) => (
+        {cups.map((cup, index) => (
           <>
             <p>{cup.brewedCup.setup.brewer}</p>
             <p>{cup.brewedCup.setup.coffee}</p>
             <p>{cup.brewedCup.brew.waterAmount}</p>
             <p>{cup.brewedCup.brew.rating}</p>
             <p>{cup.brewedCup.setup.dateOfBrew}</p>
-            <button onClick={() => navigate("/")}>More Info</button>
+            <button onClick={() => navigate(`/cups/${index}`)}>
+              More Info
+            </button>
+            <button>Delete Brewer</button>
           </>
         ))}
       </div>

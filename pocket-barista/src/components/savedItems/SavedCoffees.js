@@ -8,14 +8,17 @@ const SavedCoffees = () => {
   return (
     <div>
       <div className="past-coffee">
-        {coffee.map((bag) => (
+        {coffee.map((bag, index) => (
           <>
             <p>{bag.bagOfCoffee.about.name}</p>
             <p>{bag.bagOfCoffee.about.roaster}</p>
             <p>{bag.bagOfCoffee.about.rating}</p>
             <p>{bag.bagOfCoffee.details.roastLevel}</p>
             <p>{bag.bagOfCoffee.details.beanProcess}</p>
-            <button onClick={() => navigate("/")}>More Info</button>
+            <button onClick={() => navigate(`/coffee/${index}`, index)}>
+              More Info
+            </button>
+            <button>Delete Brewer</button>
           </>
         ))}
         <div className="new-coffee">

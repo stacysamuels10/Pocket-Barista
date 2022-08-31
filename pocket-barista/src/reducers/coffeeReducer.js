@@ -107,6 +107,7 @@ const initialState = {
       },
     },
   ],
+  counter: 0,
 };
 
 const coffeeReducer = (state = initialState, action) => {

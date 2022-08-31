@@ -12,6 +12,7 @@ const SavedGrinders = () => {
           <>
             <p>{grinder.grinder.name}</p>
             <p>{grinder.grinder.brand}</p>
+            <button>Delete Brewer</button>
           </>
         ))}
       </div>
