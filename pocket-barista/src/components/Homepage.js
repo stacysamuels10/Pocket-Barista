@@ -11,6 +11,22 @@ const Homepage = () => {
   const cups = useSelector((state) => state.brewedCupReducer.pastBrews);
   return (
     <div>
+      <div className="top-nav">
+        <label htmlFor="add">Add New:</label>
+        <select
+          name="add"
+          id=""
+          onChange={(e) => {
+            window.location.href = e.target.value;
+          }}
+        >
+          <option>Add</option>
+          <option value="/addnewbrew"> New Brew</option>
+          <option value="/addnewcoffee">New Coffee</option>
+          <option value="/addnewbrewer">New Brewer</option>
+          <option value="/addnewgrinder">New Grinder</option>
+        </select>
+      </div>
       <div className="brewHistory">
         <h1>Most Recent Brews</h1>
         {cups

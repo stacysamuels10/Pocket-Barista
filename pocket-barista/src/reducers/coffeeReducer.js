@@ -107,14 +107,16 @@ const initialState = {
       },
     },
   ],
-  counter: 0,
+  coffeeCounter: 5,
 };
 
 const coffeeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_BREWED_CUP":
+    case "SET_COFFEE_BAG":
       initialState.pastCoffeeBags.unshift({ bagOfCoffee: action.payload });
-      return initialState;
+      state = initialState;
+      let addedCoffee = (state.coffeeCounter += 1);
+      return { ...state, coffeeCounter: addedCoffee };
     case "SET_NAME":
       return {
         ...state,

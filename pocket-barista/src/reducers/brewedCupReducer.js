@@ -113,15 +113,17 @@ const initialState = {
       },
     },
   ],
-  counter: 0,
+  cupCounter: 5,
 };
 
 const brewedCupReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_BREWED_CUP":
       initialState.pastBrews.unshift({ brewedCup: action.payload });
-      return initialState;
-    case "SET_COFFEE":
+      state = initialState;
+      let addedCup = (state.cupCounter += 1);
+      return { ...state, cupCounter: addedCup };
+    case "SET_CUP_COFFEE_NAME":
       return {
         ...state,
         brewedCup: {
@@ -129,7 +131,7 @@ const brewedCupReducer = (state = initialState, action) => {
           setup: { ...state.brewedCup.setup, coffee: action.payload },
         },
       };
-    case "SET_GRINDER":
+    case "SET_CUP_GRINDER_NAME":
       return {
         ...state,
         brewedCup: {
@@ -137,7 +139,7 @@ const brewedCupReducer = (state = initialState, action) => {
           setup: { ...state.brewedCup.setup, grinder: action.payload },
         },
       };
-    case "SET_BREWER":
+    case "SET_CUP_BREWER_NAME":
       return {
         ...state,
         brewedCup: {
@@ -145,7 +147,7 @@ const brewedCupReducer = (state = initialState, action) => {
           setup: { ...state.brewedCup.setup, brewer: action.payload },
         },
       };
-    case "SET_DATE":
+    case "SET_CUP_DATE":
       return {
         ...state,
         brewedCup: {

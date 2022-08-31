@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   NewBrewState,
@@ -16,8 +16,13 @@ import {
   setNotes,
 } from "../../actions/addNewCupFunctions";
 
+const handleClick = (dispatch, brewedCup, navigate) => {
+  NewBrewState(dispatch, brewedCup);
+  navigate("/");
+};
 const AddNewCup = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const coffee = useSelector((state) => state.coffeeReducer.pastCoffeeBags);
   const grinders = useSelector((state) => state.grinderReducer.grinderPantry);
   const brewers = useSelector((state) => state.brewerReducer.brewerPantry);
@@ -26,7 +31,9 @@ const AddNewCup = () => {
     <div>
       <div className="title">
         <h1>Record a Brew</h1>
-        <button onClick={() => NewBrewState(dispatch, brewedCup)}>Save</button>
+        <button onClick={() => handleClick(dispatch, brewedCup, navigate)}>
+          Save
+        </button>
       </div>
       <div className="setup">
         <h3>The Setup:</h3>
@@ -38,9 +45,7 @@ const AddNewCup = () => {
         >
           <option value="Select-coffee">Select Coffee</option>
           {coffee.map((bag) => (
-            <option value={bag.bagOfCoffee.about.name}>
-              {bag.bagOfCoffee.about.name}
-            </option>
+            <option>{bag.bagOfCoffee.about.name}</option>
           ))}
         </select>
         <Link to="/addnewcoffee" name="newcoffee">
@@ -54,7 +59,7 @@ const AddNewCup = () => {
         >
           <option value="Select-grinder">Select Grinder</option>
           {grinders.map((grinder) => (
-            <option value={grinder.grinder.name}>{grinder.grinder.name}</option>
+            <option>{grinder.grinder.name}</option>
           ))}
         </select>
         <Link to="/addnewgrinder" name="grinder">
@@ -68,7 +73,7 @@ const AddNewCup = () => {
         >
           <option value="Select-brewer">Select Brewer</option>
           {brewers.map((brewer) => (
-            <option value={brewer.brewer.name}>{brewer.brewer.name}</option>
+            <option>{brewer.brewer.name}</option>
           ))}
         </select>
         <Link to="/addnewbrewer" name="brewer">
