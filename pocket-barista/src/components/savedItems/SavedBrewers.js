@@ -1,6 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Rating from "@mui/material/Rating";
+import Divider from "@mui/material/Divider";
 
 const SavedBrewers = () => {
   const navigate = useNavigate();
@@ -8,19 +12,28 @@ const SavedBrewers = () => {
   return (
     <div>
       <div className="past-brewers">
-        {brewers.map((brewer) => (
-          <>
-            <p>{brewer.brewer.name}</p>
-            <p>{brewer.brewer.brand}</p>
-            <p>{brewer.brewer.type}</p>
-            <button>Delete Brewer</button>
-          </>
-        ))}
-      </div>
-      <div className="add-new">
-        <button onClick={() => navigate("/addnewbrewer")}>
+        <h2>Brewers</h2>
+        <Divider />
+        <Button onClick={() => navigate("/addnewbrewer")}>
           Add New Brewer
-        </button>
+        </Button>
+        <Grid
+          container
+          spacing={0}
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          {brewers.map((brewer) => (
+            <Grid item xs={12}>
+              <h4>{brewer.brewer.name}</h4>
+              <h4>{brewer.brewer.brand}</h4>
+              <h4>{brewer.brewer.type}</h4>
+              {/* <button>Delete Brewer</button> */}
+              <Divider />
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </div>
   );

@@ -38,15 +38,17 @@ const SavedCoffees = () => {
                   <p>{bag.bagOfCoffee.details.roastLevel}</p>
                   <p>{bag.bagOfCoffee.details.beanProcess}</p>
                 </Grid>
-                <Rating
-                  name="read-only"
-                  value={bag.bagOfCoffee.about.rating}
-                  readOnly
-                />
-                <Button onClick={() => navigate(`/coffee/${index}`, index)}>
-                  More Info
-                </Button>
-                {/* <Button>Delete</Button> */}
+                <Grid container justifyContent="space-around">
+                  <Rating
+                    name="read-only"
+                    value={bag.bagOfCoffee.about.rating}
+                    readOnly
+                  />
+                  <Button onClick={() => navigate(`/coffee/${index}`, index)}>
+                    More Info
+                  </Button>
+                  {/* <Button>Delete</Button> */}
+                </Grid>
               </Grid>
               <Divider />
             </Grid>
