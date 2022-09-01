@@ -1,85 +1,105 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const ChemexBrewGuide = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="top-title">
-        <button onClick={() => navigate("/")}>Home</button>
-        <h1>Chemex</h1>
-      </div>
-      <div className="brew-guide-title">
-        <h4>Brew Guide</h4>
-        <h3>Chemex</h3>
-        <p>A classic way to brew.</p>
-      </div>
-      <div className="grind-type">
-        <h4>Grind size</h4>
-        <h3>Medium</h3>
-        <p>Similar to table salt</p>
-      </div>
-      <div className="equipment">
-        <h4>Equipment</h4>
-        <h3>Chemex</h3>
-        <h3>Filter Paper</h3>
-        <h3>Kettle</h3>
-      </div>
-      <div className="method">
-        <h4>Method</h4>
-        <div className="step 1">
-          <p>Grind Coffee</p>
-          <p>Grind 30g of coffee.</p>
-        </div>
-        <div className="step 2">
-          <p>Heat Water</p>
-          <p>Heat the water to 200 F.</p>
-        </div>
-        <div className="step 3">
-          <p>Prepare Filter</p>
-          <p>
-            Open up the filter and place it in the brewer. The three layer side
-            should be against the spout.
-          </p>
-        </div>
-        <div className="step 4">
-          <p>Rinse Filter</p>
-          <p>
-            Pour a little water through the paper to rinse the paper and warm
-            the brewer, then pour this water out.
-          </p>
-        </div>
-        <div className="step 5">
-          <p>Pour Coffee</p>
-          <p>Pour 30g of coffee into the brewer.</p>
-        </div>
-        <div className="step 6">
-          <p>Pour Water</p>
-          <p>Pour 60g of water into the brewer in a spiral motion.</p>
-        </div>
-        <div className="step 7">
-          <p>Bloom</p>
-          <p>Allow the coffee to bloom for 30 seconds.</p>
-        </div>
-        <div className="step 8">
-          <p>Pour Water</p>
-          <p>
-            Gently pour the rest of the water into the brewer in a spiral
-            motion.
-          </p>
-        </div>
-        <div className="step 9">
-          <p>Wait</p>
-          <p>Wait for about 3 minutes for the water to drain through.</p>
-        </div>
-        <div className="step 10">
-          <p>Serve</p>
-          <p>
-            Remove the filter paper from the brewer and serve your coffee.
-            Enjoy!
-          </p>
-        </div>
-      </div>
+      <Box className="aeropress">
+        <Grid
+          container
+          spacing={0}
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <Button variant="contained" onClick={() => navigate("/")}>
+              Home
+            </Button>
+            <h1>Chemex</h1>
+            <p>A classic way to brew.</p>
+          </Grid>
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item xs={6}>
+              <h2>Grind size</h2>
+              <h4>Medium</h4>
+              <p>Similar to table salt</p>
+            </Grid>
+            <Grid item xs={6}>
+              <h2>Equipment</h2>
+              <h4>Chemex</h4>
+              <h4>Filter Paper</h4>
+              <h4>Kettle</h4>
+            </Grid>
+            <h2>Method</h2>
+          </Grid>
+          <Grid item>
+            <h4>Grind Coffee</h4>
+            <p>Grind 30g of coffee.</p>
+          </Grid>
+          <Grid item>
+            <h4>Heat Water</h4>
+            <p>Heat the water to 200 F.</p>
+          </Grid>
+          <Grid item>
+            <h4>Prepare Filter</h4>
+            <p>
+              Open up the filter and place it in the brewer. The three layer
+              side should be against the spout.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Rinse Filter</h4>
+            <p>
+              Pour a little water through the paper to rinse the paper and warm
+              the brewer, then pour this water out.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Coffee</h4>
+            <p>Pour 30g of coffee into the brewer.</p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Water</h4>
+            <p>Pour 60g of water into the brewer in a spiral motion.</p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Water</h4>
+            <p>Pour 60g of water into the brewer in a spiral motion.</p>
+          </Grid>
+          <Grid item>
+            <h4>Bloom</h4>
+            <p>Allow the coffee to bloom for 30 seconds.</p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Water</h4>
+            <p>
+              Gently pour the rest of the water into the brewer in a spiral
+              motion.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Wait</h4>
+            <p>Wait for about 3 minutes for the water to drain through.</p>
+          </Grid>
+          <Grid item>
+            <h4>Serve</h4>
+            <p>
+              Remove the filter paper from the brewer and serve your coffee.
+              Enjoy!
+            </p>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };

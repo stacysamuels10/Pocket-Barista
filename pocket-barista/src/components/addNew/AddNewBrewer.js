@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import {
   NewBrewerState,
   setBrewerName,
@@ -14,27 +16,26 @@ const AddNewBrewer = () => {
     <div>
       <div className="title">
         <h1>Add New Brewer</h1>
-        <button onClick={() => NewBrewerState(dispatch, brewer)}>Save</button>
+        <Button onClick={() => NewBrewerState(dispatch, brewer)}>Save</Button>
       </div>
       <div className="brewer">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
+        <TextField
+          id="filled-basic"
+          label="Name"
+          variant="filled"
           onChange={(e) => setBrewerName(dispatch, e.target.value)}
         />
-        <label htmlFor="brand">Brand:</label>
-        <input
-          type="text"
-          name="brand"
-          placeholder="Brand"
+        <TextField
+          id="filled-basic"
+          label="Brand"
+          variant="filled"
           onChange={(e) => setBrewerBrand(dispatch, e.target.value)}
         />
         <label htmlFor="type">Type:</label>
-        <input
-          type="text"
-          name="type"
+        <TextField
+          id="filled-basic"
+          label="Type"
+          variant="filled"
           onChange={(e) => setBrewerType(dispatch, e.target.value)}
         />
       </div>

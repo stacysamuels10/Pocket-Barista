@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import Rating from "@mui/material/Rating";
 import Divider from "@mui/material/Divider";
 
 const SavedBrewers = () => {

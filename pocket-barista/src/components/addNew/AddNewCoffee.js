@@ -1,5 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Rating from "@mui/material/Rating";
+import Button from "@mui/material/Button";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import {
   NewCoffeeState,
   setName,
@@ -14,91 +21,103 @@ import {
   setBagNotes,
 } from "../../actions/addNewCoffeeFunctions";
 
+const handleClick = (dispatch, bagOfCoffee, navigate) => {
+  NewCoffeeState(dispatch, bagOfCoffee);
+  navigate("/");
+};
+
 const AddNewCoffee = () => {
+  const setCoffeeStar = (e, newValue) => {
+    setValue(newValue);
+    setCoffeeRating(dispatch, e.target.value);
+  };
+  const [selectedDate, handleDateChange] = React.useState(new Date());
+  const [value, setValue] = React.useState(0);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const bagOfCoffee = useSelector((state) => state.coffeeReducer.bagOfCoffee);
   return (
     <div>
       <div className="title">
         <h1>Add a New Bag of Coffee</h1>
-        <button onClick={() => NewCoffeeState(dispatch, bagOfCoffee)}>
+        <Button onClick={() => handleClick(dispatch, bagOfCoffee, navigate)}>
           Save
-        </button>
+        </Button>
         <div className="about">
           <h3>About</h3>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
+          <TextField
+            id="filled-basic"
+            label="Name"
+            variant="filled"
             onChange={(e) => setName(dispatch, e.target.value)}
           />
-          <label htmlFor="roaster">Roaster:</label>
-          <input
-            type="text"
-            name="roaster"
-            placeholder="Roaster"
+          <TextField
+            id="filled-basic"
+            label="Roaster"
+            variant="filled"
             onChange={(e) => setRoaster(dispatch, e.target.value)}
           />
-          <label htmlFor="origin">Origin:</label>
-          <input
-            type="text"
-            name="origin"
-            placeholder="Origin"
+          <TextField
+            id="filled-basic"
+            label="Origin"
+            variant="filled"
             onChange={(e) => setOrigin(dispatch, e.target.value)}
           />
-          <label htmlFor="rating">Rating:</label>
-          <input
-            type="text"
-            name="rating"
-            placeholder="Rating"
+          <Rating
+            name="simple-controlled"
+            value={value}
+            size="large"
             onChange={(e) => setCoffeeRating(dispatch, e.target.value)}
           />
         </div>
         <div className="details">
           <h3>Details</h3>
-          <label htmlFor="beantype">Coffee Type:</label>
-          <input
-            type="text"
-            name="beantype"
+          <TextField
+            id="filled-basic"
+            label="Coffee Type"
+            variant="filled"
             onChange={(e) => setBeanType(dispatch, e.target.value)}
           />
-          <label htmlFor="roastlevel">Roast Type:</label>
-          <input
-            type="text"
-            name="roastlevel"
+          <TextField
+            id="filled-basic"
+            label="Roast Type"
+            variant="filled"
             onChange={(e) => setRoastLevel(dispatch, e.target.value)}
           />
-          <label htmlFor="beanprocess">Process:</label>
-          <input
-            type="text"
-            name="beanprocess"
+          <TextField
+            id="filled-basic"
+            label="Process"
+            variant="filled"
             onChange={(e) => setBeanProcess(dispatch, e.target.value)}
           />
-          <label htmlFor="bagamount">Amount(oz):</label>
-          <input
-            type="text"
-            name="bagamount"
-            placeholder="Amount (oz)"
+          <TextField
+            id="filled-basic"
+            label="Amount (oz)"
+            variant="filled"
             onChange={(e) => setBagAmount(dispatch, e.target.value)}
           />
-          <label htmlFor="roastdate">Roast Date</label>
-          <input
-            type="date"
-            name="roastdate"
-            id="roastdate"
-            onChange={(e) => setRoastDate(dispatch, e.target.value)}
-          />
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              label="Roast Date"
+              value={new Date()}
+              inputFormat="MM/DD/YYYY"
+              onChange={(selectedDate) => {
+                handleDateChange(selectedDate);
+                const formattedDate = String(selectedDate.$d).slice(0, 15);
+                setRoastDate(dispatch, formattedDate);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
         </div>
         <div className="notes">
-          <label htmlFor="notes"></label>
-          <textarea
-            name="notes"
-            id=""
-            cols="30"
-            rows="8"
+          <TextField
+            id="outlined-textarea"
+            label="Notes"
+            placeholder="Notes"
+            multiline
             onChange={(e) => setBagNotes(dispatch, e.target.value)}
-          ></textarea>
+          />
         </div>
       </div>
     </div>

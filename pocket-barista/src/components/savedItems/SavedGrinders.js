@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
 
 const SavedGrinders = () => {
   const navigate = useNavigate();
@@ -8,18 +11,26 @@ const SavedGrinders = () => {
   return (
     <div>
       <div className="past-grinders">
-        {grinders.map((grinder) => (
-          <>
-            <p>{grinder.grinder.name}</p>
-            <p>{grinder.grinder.brand}</p>
-            <button>Delete Brewer</button>
-          </>
-        ))}
-      </div>
-      <div className="new-grinder">
-        <button onClick={() => navigate("/addnewgrinder")}>
+        <h1>Grinders</h1>
+        <Button onClick={() => navigate("/addnewgrinder")}>
           Add New Grinder
-        </button>
+        </Button>
+        <Grid
+          container
+          spacing={0}
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          {grinders.map((grinder) => (
+            <Grid item xs={12}>
+              <h4>{grinder.grinder.name}</h4>
+              <h4>{grinder.grinder.brand}</h4>
+              {/* <button>Delete Brewer</button> */}
+              <Divider />
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </div>
   );

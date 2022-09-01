@@ -25,6 +25,8 @@ import BrewGuideMain from "./components/BrewGuideMain";
 import Paper from "@mui/material/Paper";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 
 function App() {
   const theme = createTheme({
@@ -85,12 +87,14 @@ function App() {
             <Route path="/v60guide" element={<V60BrewGuide />}></Route>
             <Route path="/brewguides" element={<BrewGuideMain />}></Route>
           </Routes>
-          <Paper
-            sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
-            elevation={3}
-          >
-            <NavBar></NavBar>
-          </Paper>
+          <BottomNavigation>
+            <Paper
+              sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+              elevation={10}
+            >
+              <NavBar></NavBar>
+            </Paper>
+          </BottomNavigation>
         </BrowserRouter>
       </div>
     </ThemeProvider>

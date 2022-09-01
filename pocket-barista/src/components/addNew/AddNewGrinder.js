@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import {
   NewGrinderState,
   setGrinderName,
@@ -13,21 +15,19 @@ const AddNewGrinder = () => {
     <div>
       <div className="title">
         <h1>Add a Grinder</h1>
-        <button onClick={() => NewGrinderState(dispatch, grinder)}>Save</button>
+        <Button onClick={() => NewGrinderState(dispatch, grinder)}>Save</Button>
       </div>
       <div className="form">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
+        <TextField
+          id="filled-basic"
+          label="Name"
+          variant="filled"
           onChange={(e) => setGrinderName(dispatch, e.target.value)}
         />
-        <label htmlFor="brand">Brand:</label>
-        <input
-          type="text"
-          name="brand"
-          placeholder="brand"
+        <TextField
+          id="filled-basic"
+          label="Brand"
+          variant="filled"
           onChange={(e) => setGrinderBrand(dispatch, e.target.value)}
         />
       </div>
