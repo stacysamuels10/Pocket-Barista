@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import PageNotFound from "./components/404PageNotFound";
 import Homepage from "./components/Homepage";
 import Data from "./components/data/Data";
 import SavedCoffee from "./components/savedItems/SavedCoffees";
@@ -21,6 +22,7 @@ import FrenchPressBrewGuide from "./components/brewGuides/FrenchPressBrewGuide";
 import MokaPotBrewGuide from "./components/brewGuides/MokaPotBrewGuide";
 import V60BrewGuide from "./components/brewGuides/V60BrewGuide";
 import BrewGuideMain from "./components/BrewGuideMain";
+import Paper from "@mui/material/Paper";
 import "./App.css";
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
           <Route path="/data" element={<Data />}></Route>
           <Route path="/coffee" element={<SavedCoffee />}></Route>
           <Route path="/coffee/:id" element={<ViewCoffee />}></Route>
@@ -56,7 +59,12 @@ function App() {
           <Route path="/v60guide" element={<V60BrewGuide />}></Route>
           <Route path="/brewguides" element={<BrewGuideMain />}></Route>
         </Routes>
-        <NavBar></NavBar>
+        <Paper
+          sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+          elevation={3}
+        >
+          <NavBar></NavBar>
+        </Paper>
       </BrowserRouter>
     </div>
   );
