@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import PageNotFound from "./components/404PageNotFound";
 import Homepage from "./components/Homepage";
@@ -26,7 +26,6 @@ import Paper from "@mui/material/Paper";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 
 function App() {
   const theme = createTheme({

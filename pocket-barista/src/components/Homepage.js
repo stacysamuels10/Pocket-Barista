@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import InputLabel from "@mui/material/InputLabel";
 import blkandbold from "../assets/blkandbold.png";
 import driftaway from "../assets/driftaway.jpeg";

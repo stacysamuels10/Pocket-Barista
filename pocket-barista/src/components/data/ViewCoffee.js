@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Rating from "@mui/material/Rating";
 import { Grid } from "@mui/material";
 
