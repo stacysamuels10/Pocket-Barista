@@ -209,8 +209,12 @@ const Homepage = () => {
         <a href="https://blkandbold.com/">
           <img src={blkandbold} alt="Black and Bold coffee" />
         </a>
-        <img src={driftaway} alt="Driftaway coffee" />
-        <img src={nostalgia} alt="nostalgia coffee" />
+        <a href="https://driftaway.coffee/">
+          <img src={driftaway} alt="Driftaway coffee" />
+        </a>
+        <a href="https://nostalgiacoffeeroasters.com/">
+          <img src={nostalgia} alt="nostalgia coffee" />
+        </a>
       </div>
       <div className="featuredGuides">
         <h2>Featured Guides</h2>

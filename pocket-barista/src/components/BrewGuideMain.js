@@ -1,34 +1,103 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 
 const BrewGuideMain = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <button onClick={() => navigate("/aeropressguide")}>
-        Aeropress. Espresso style on the go.
-      </button>
-      <button onClick={() => navigate("/chemexguide")}>
-        Chemex. A classic way to brew.
-      </button>
-      <button onClick={() => navigate("/coldbrewguide")}>
-        Cold Brew. A warm weather favorite.
-      </button>
-      <button onClick={() => navigate("/espressoguide")}>
-        Espresso. Fast and simple.
-      </button>
-      <button onClick={() => navigate("/staggguide")}>
-        Fellow Stagg Pour Over. A modern twist on the classic.
-      </button>
-      <button onClick={() => navigate("/frenchpressguide")}>
-        French Press. Lovely immersion brewing.
-      </button>
-      <button onClick={() => navigate("/mokapotguide")}>
-        Moka Pot. The Italian way.
-      </button>
-      <button onClick={() => navigate("/v60guide")}>
-        V60 Pour Over. The particular pour over.
-      </button>
+    <div className="brew-guides">
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/aeropressguide")}
+          >
+            Aeropress
+          </Button>
+          <p>Smooth, easy brews.</p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/chemexguide")}
+          >
+            Chemex
+          </Button>
+          <p>A classic way to brew.</p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/coldbrewguide")}
+          >
+            Cold Brew
+          </Button>
+          <p>A warm weather favorite.</p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/espressoguide")}
+          >
+            Espresso
+          </Button>
+          <p>
+            Wonderful coffee, fast, using a semi-automatic espresso machine.
+          </p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/staggguide")}
+          >
+            Fellow Stagg Pour Over
+          </Button>
+          <p>A modern twist on the classic filter.</p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/frenchpressguide")}
+          >
+            French Press
+          </Button>
+          <p>Lovely immersion brewing.</p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/mokapotguide")}
+          >
+            Moka Pot
+          </Button>
+          <p>The Italian way.</p>
+        </Paper>
+        <Paper elevation={0}>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={() => navigate("/v60guide")}
+          >
+            V60 Pour Over
+          </Button>
+          <p>The particular pour over.</p>
+        </Paper>
+      </Grid>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 import {
   NewCoffeeState,
   setName,
@@ -31,7 +32,7 @@ const AddNewCoffee = () => {
     setValue(newValue);
     setCoffeeRating(dispatch, e.target.value);
   };
-  const [selectedDate, handleDateChange] = React.useState(new Date());
+  const [dayValue, setDayValue] = React.useState(dayjs("2022-09-01T21:11:54"));
   const [value, setValue] = React.useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -67,14 +68,14 @@ const AddNewCoffee = () => {
             name="simple-controlled"
             value={value}
             size="large"
-            onChange={(e) => setCoffeeRating(dispatch, e.target.value)}
+            onChange={(e, newValue) => setCoffeeStar(dispatch, newValue)}
           />
         </div>
         <div className="details">
           <h3>Details</h3>
           <TextField
             id="filled-basic"
-            label="Coffee Type"
+            label="Whole or Ground"
             variant="filled"
             onChange={(e) => setBeanType(dispatch, e.target.value)}
           />
@@ -99,10 +100,10 @@ const AddNewCoffee = () => {
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
               label="Roast Date"
-              value={new Date()}
+              value={dayValue}
               inputFormat="MM/DD/YYYY"
               onChange={(selectedDate) => {
-                handleDateChange(selectedDate);
+                setDayValue(selectedDate);
                 const formattedDate = String(selectedDate.$d).slice(0, 15);
                 setRoastDate(dispatch, formattedDate);
               }}

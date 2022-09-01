@@ -7,15 +7,24 @@ import {
   setGrinderName,
   setGrinderBrand,
 } from "../../actions/addNewGrinderFunctions";
+import { useNavigate } from "react-router-dom";
+
+const handleClick = (dispatch, grinder, navigate) => {
+  NewGrinderState(dispatch, grinder);
+  navigate("/");
+};
 
 const AddNewGrinder = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const grinder = useSelector((state) => state.grinderReducer.grinder);
   return (
     <div>
       <div className="title">
         <h1>Add a Grinder</h1>
-        <Button onClick={() => NewGrinderState(dispatch, grinder)}>Save</Button>
+        <Button onClick={() => handleClick(dispatch, grinder, navigate)}>
+          Save
+        </Button>
       </div>
       <div className="form">
         <TextField

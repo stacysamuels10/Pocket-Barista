@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 
 import {
   NewBrewState,
@@ -37,7 +38,7 @@ const AddNewCup = () => {
     setValue(newValue);
     setRating(dispatch, e.target.value);
   };
-  const [selectedDate, handleDateChange] = React.useState(new Date());
+  const [dayValue, setDayValue] = React.useState(dayjs("2022-09-01T21:11:54"));
   const [value, setValue] = React.useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -115,10 +116,10 @@ const AddNewCup = () => {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             label="Brew Date"
-            value={new Date()}
+            value={dayValue}
             inputFormat="MM/DD/YYYY"
             onChange={(selectedDate) => {
-              handleDateChange(selectedDate);
+              setDayValue(selectedDate);
               const formattedDate = String(selectedDate.$d).slice(0, 15);
               setDate(dispatch, formattedDate);
             }}

@@ -1,89 +1,105 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const FellowStaggBrewGuide = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="top-title">
-        <button onClick={() => navigate("/")}>Home</button>
-        <h1>Stagg Brewer</h1>
-      </div>
-      <div className="brew-guide-title">
-        <h4>Brew Guide</h4>
-        <h3>Stagg Brewer</h3>
-        <p>A modern twist on the classic filter</p>
-      </div>
-      <div className="grind-type">
-        <h4>Grind size</h4>
-        <h3>Medium-Fine</h3>
-        <p>Similar to table salt or just slightly smaller.</p>
-      </div>
-      <div className="equipment">
-        <h4>Equipment</h4>
-        <h3>Stagg X Filter</h3>
-        <h3>Stagg X Filter Paper</h3>
-        <h3>Kettle</h3>
-      </div>
-      <div className="method">
-        <h4>Method</h4>
-        <div className="step 1">
-          <p>Grind Coffee</p>
-          <p>Grind 20g of coffee.</p>
-        </div>
-        <div className="step 2">
-          <p>Heat Water</p>
-          <p>Heat the water to 205 F.</p>
-        </div>
-        <div className="step 3">
-          <p>Rinse Filter</p>
-          <p>
-            Pour a little water through the paper to rinse the paper and warm
-            the brewer, then pour this water out.
-          </p>
-        </div>
-        <div className="step 4">
-          <p>Pour Coffee</p>
-          <p>Pour 20g of coffee into the brewer.</p>
-        </div>
-        <div className="step 5">
-          <p>Pour Water</p>
-          <p>Pour 40g of water into the brewer in a spiral motion.</p>
-        </div>
-        <div className="step 6">
-          <p>Bloom</p>
-          <p>Allow the coffee to bloom for 45 seconds.</p>
-        </div>
-        <div className="step 7">
-          <p>Pour Water</p>
-          <p>
-            Gently pour 110 grams of water into the brewer in a spiral motion.
-          </p>
-        </div>
-        <div className="step 8">
-          <p>Wait</p>
-          <p>
-            Wait for about 40 seconds for more of the water to drain through.
-          </p>
-        </div>
-        <div className="step 9">
-          <p>Pour Water</p>
-          <p>
-            Gently pour 150 grams of water into the brewer in a spiral motion.
-          </p>
-        </div>
-        <div className="step 10">
-          <p>Wait</p>
-          <p>Wait for the rest of the water to drain through.</p>
-        </div>
-        <div className="step 11">
-          <p>Serve</p>
-          <p>
-            Remove the filter paper from the brewer and serve your coffee.
-            Enjoy!
-          </p>
-        </div>
-      </div>
+      <Box className="aeropress">
+        <Grid
+          container
+          spacing={0}
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <Button variant="contained" onClick={() => navigate("/")}>
+              Home
+            </Button>
+            <h1>Stagg Brewer</h1>
+            <p>A modern twist on the classic filter.</p>
+          </Grid>
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item xs={6}>
+              <h2>Grind size</h2>
+              <h4>Medium-Fine</h4>
+              <p>Similar to table salt or just slightly smaller.</p>
+            </Grid>
+            <Grid item xs={6}>
+              <h2>Equipment</h2>
+              <h4>Stagg X Filter</h4>
+              <h4>Stagg X Filter Paper</h4>
+              <h4>Kettle</h4>
+            </Grid>
+            <h2>Method</h2>
+          </Grid>
+          <Grid item>
+            <h4>Grind Coffee</h4>
+            <p>Grind 20g of coffee.</p>
+          </Grid>
+          <Grid item>
+            <h4>Heat Water</h4>
+            <p>Heat the water to 208 F.</p>
+          </Grid>
+          <Grid item>
+            <h4>Rinse Filter</h4>
+            <p>
+              Pour a little water through the paper to rinse the paper and warm
+              the brewer, then pour this water out.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Coffee</h4>
+            <p>Pour 20g of coffee into the brewer.</p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Water</h4>
+            <p>Pour 40g of water into the brewer in a spiral motion.</p>
+          </Grid>
+          <Grid item>
+            <h4>Bloom</h4>
+            <p>Allow the coffee to bloom for 45 seconds.</p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Water</h4>
+            <p>
+              Gently pour 110 grams of water into the brewer in a spiral motion.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Wait</h4>
+            <p>
+              Wait for about 40 seconds for more of the water to drain through.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Pour Water</h4>
+            <p>
+              Gently pour 150 grams of water into the brewer in a spiral motion.
+            </p>
+          </Grid>
+          <Grid item>
+            <h4>Wait</h4>
+            <p>Wait for the rest of the water to drain through.</p>
+          </Grid>
+          <Grid item>
+            <h4>Serve</h4>
+            <p>
+              Remove the filter paper from the brewer and serve your coffee.
+              Enjoy!
+            </p>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };

@@ -8,15 +8,24 @@ import {
   setBrewerBrand,
   setBrewerType,
 } from "../../actions/addNewBrewerFunctions";
+import { useNavigate } from "react-router-dom";
+
+const handleClick = (dispatch, brewer, navigate) => {
+  NewBrewerState(dispatch, brewer);
+  navigate("/");
+};
 
 const AddNewBrewer = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const brewer = useSelector((state) => state.brewerReducer.brewer);
   return (
     <div>
       <div className="title">
         <h1>Add New Brewer</h1>
-        <Button onClick={() => NewBrewerState(dispatch, brewer)}>Save</Button>
+        <Button onClick={() => handleClick(dispatch, brewer, navigate)}>
+          Save
+        </Button>
       </div>
       <div className="brewer">
         <TextField
