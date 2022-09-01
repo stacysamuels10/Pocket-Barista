@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import SavedCups from "./savedItems/SavedCups";
+import InputLabel from "@mui/material/InputLabel";
 import blkandbold from "../assets/blkandbold.png";
 import driftaway from "../assets/driftaway.jpeg";
 import nostalgia from "../assets/nostalgia.png";
@@ -12,54 +12,34 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Box from "@mui/material/Box";
-import Fade from "@mui/material/Fade";
-import Popper from "@mui/material/Popper";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
 
 const Homepage = () => {
-  const [open, setOpen] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-    setOpen((previousOpen) => !previousOpen);
-  };
-
-  const canBeOpen = open && Boolean(anchorEl);
-  const id = canBeOpen ? "transition-popper" : undefined;
-
   const navigate = useNavigate();
   const cups = useSelector((state) => state.brewedCupReducer.pastBrews);
-
+  const coffee = useSelector((state) => state.coffeeReducer.pastCoffeeBags);
   return (
     <div>
       <div className="top-nav">
-        <label htmlFor="add">Add New:</label>
-        <button aria-describedby={id} type="button" onClick={handleClick}>
-          Add
-        </button>
-
-        <Popper id={id} open={open} anchorEl={anchorEl} transition>
-          {({ TransitionProps }) => (
-            <Fade {...TransitionProps} timeout={350}>
-              <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
-                <select
-                  name="add"
-                  id=""
-                  onChange={(e) => {
-                    window.location.href = e.target.value;
-                  }}
-                >
-                  <option>Add</option>
-                  <option value="/addnewbrew"> New Brew</option>
-                  <option value="/addnewcoffee">New Coffee</option>
-                  <option value="/addnewbrewer">New Brewer</option>
-                  <option value="/addnewgrinder">New Grinder</option>
-                </select>
-              </Box>
-            </Fade>
-          )}
-        </Popper>
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-standard-label">Add</InputLabel>
+          <Select
+            name="add"
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            label="Add"
+            onChange={(e) => {
+              window.location.href = e.target.value;
+            }}
+          >
+            <MenuItem value="/addnewbrew"> New Brew</MenuItem>
+            <MenuItem value="/addnewcoffee">New Coffee</MenuItem>
+            <MenuItem value="/addnewbrewer">New Brewer</MenuItem>
+            <MenuItem value="/addnewgrinder">New Grinder</MenuItem>
+          </Select>
+        </FormControl>
       </div>
       <div className="welcome">
         <h1>Welcome to Pocket Barista</h1>
@@ -90,11 +70,48 @@ const Homepage = () => {
                   value={cup.brewedCup.brew.rating}
                   readOnly
                 />
-                <p>{cup.brewedCup.brew.rating}</p>
+                <Button
+                  variant="outlined"
+                  className="moreInfoButton"
+                  disableElevation
+                  onClick={() => navigate(`/cups/${index}`)}
+                >
+                  More Info
+                </Button>
+              </Card>
+            ))}
+        </Accordion>
+      </div>
+      <div className="brewHistory">
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>Coffee Pantry</Typography>
+          </AccordionSummary>
+          {coffee
+            .filter((bag, index) => index < 5)
+            .map((bag, index) => (
+              <Card className="past-cup">
+                <div className="left-side">
+                  <p>{bag.bagOfCoffee.about.name}</p>
+                  <p>{bag.bagOfCoffee.about.roaster}</p>
+                </div>
+                <div className="right-side">
+                  <p>{bag.bagOfCoffee.details.roastLevel}</p>
+                  <p>{bag.bagOfCoffee.details.beanProcess}</p>
+                </div>
+                <Rating
+                  name="read-only"
+                  value={bag.bagOfCoffee.about.rating}
+                  readOnly
+                />
                 <Button
                   variant="outlined"
                   disableElevation
-                  onClick={() => navigate(`/cups/${index}`)}
+                  onClick={() => navigate(`/coffee/${index}`)}
                 >
                   More Info
                 </Button>
@@ -194,6 +211,30 @@ const Homepage = () => {
         </a>
         <img src={driftaway} alt="Driftaway coffee" />
         <img src={nostalgia} alt="nostalgia coffee" />
+      </div>
+      <div className="featuredGuides">
+        <h2>Featured Guides</h2>
+        <Button
+          variant="contained"
+          disableElevation
+          onClick={() => navigate("/aeropressguide")}
+        >
+          Aeropress
+        </Button>
+        <Button
+          variant="contained"
+          disableElevation
+          onClick={() => navigate("/mokapotguide")}
+        >
+          Moka Pot
+        </Button>
+        <Button
+          variant="contained"
+          disableElevation
+          onClick={() => navigate("/coldbrewguide")}
+        >
+          Cold Brew
+        </Button>
       </div>
     </div>
   );

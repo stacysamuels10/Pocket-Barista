@@ -24,49 +24,76 @@ import V60BrewGuide from "./components/brewGuides/V60BrewGuide";
 import BrewGuideMain from "./components/BrewGuideMain";
 import Paper from "@mui/material/Paper";
 import "./App.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function App() {
+  const theme = createTheme({
+    status: {
+      danger: "#e6af2e",
+    },
+    palette: {
+      primary: {
+        main: "#a3320b",
+        darker: "#6b0504",
+      },
+      neutral: {
+        main: "#fbfffe",
+        contrastText: "#001514",
+      },
+    },
+  });
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="*" element={<PageNotFound />}></Route>
-          <Route path="/data" element={<Data />}></Route>
-          <Route path="/coffee" element={<SavedCoffee />}></Route>
-          <Route path="/coffee/:id" element={<ViewCoffee />}></Route>
-          <Route path="/cups" element={<SavedCups />}></Route>
-          <Route path="/cups/:id" element={<ViewCup />}></Route>
-          <Route path="/grinders" element={<SavedGrinders />}></Route>
-          <Route path="/brewers" element={<SavedBrewers />}></Route>
-          <Route path="/addnewbrew" element={<AddNewCup />}></Route>
-          <Route path="/addnewcoffee" element={<AddNewCoffee />}></Route>
-          <Route path="/addnewbrewer" element={<AddNewBrewer />}></Route>
-          <Route path="/addnewgrinder" element={<AddNewGrinder />}></Route>
-          <Route
-            path="/aeropressguide"
-            element={<AeropressBrewGuide />}
-          ></Route>
-          <Route path="/chemexguide" element={<ChemexBrewGuide />}></Route>
-          <Route path="/coldbrewguide" element={<ColdBrewBrewGuide />}></Route>
-          <Route path="/espressoguide" element={<EspressoBrewGuide />}></Route>
-          <Route path="/staggguide" element={<FellowStaggBrewGuide />}></Route>
-          <Route
-            path="/frenchpressguide"
-            element={<FrenchPressBrewGuide />}
-          ></Route>
-          <Route path="/mokapotguide" element={<MokaPotBrewGuide />}></Route>
-          <Route path="/v60guide" element={<V60BrewGuide />}></Route>
-          <Route path="/brewguides" element={<BrewGuideMain />}></Route>
-        </Routes>
-        <Paper
-          sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
-          elevation={3}
-        >
-          <NavBar></NavBar>
-        </Paper>
-      </BrowserRouter>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Homepage />}></Route>
+            <Route path="*" element={<PageNotFound />}></Route>
+            <Route path="/data" element={<Data />}></Route>
+            <Route path="/coffee" element={<SavedCoffee />}></Route>
+            <Route path="/coffee/:id" element={<ViewCoffee />}></Route>
+            <Route path="/cups" element={<SavedCups />}></Route>
+            <Route path="/cups/:id" element={<ViewCup />}></Route>
+            <Route path="/grinders" element={<SavedGrinders />}></Route>
+            <Route path="/brewers" element={<SavedBrewers />}></Route>
+            <Route path="/addnewbrew" element={<AddNewCup />}></Route>
+            <Route path="/addnewcoffee" element={<AddNewCoffee />}></Route>
+            <Route path="/addnewbrewer" element={<AddNewBrewer />}></Route>
+            <Route path="/addnewgrinder" element={<AddNewGrinder />}></Route>
+            <Route
+              path="/aeropressguide"
+              element={<AeropressBrewGuide />}
+            ></Route>
+            <Route path="/chemexguide" element={<ChemexBrewGuide />}></Route>
+            <Route
+              path="/coldbrewguide"
+              element={<ColdBrewBrewGuide />}
+            ></Route>
+            <Route
+              path="/espressoguide"
+              element={<EspressoBrewGuide />}
+            ></Route>
+            <Route
+              path="/staggguide"
+              element={<FellowStaggBrewGuide />}
+            ></Route>
+            <Route
+              path="/frenchpressguide"
+              element={<FrenchPressBrewGuide />}
+            ></Route>
+            <Route path="/mokapotguide" element={<MokaPotBrewGuide />}></Route>
+            <Route path="/v60guide" element={<V60BrewGuide />}></Route>
+            <Route path="/brewguides" element={<BrewGuideMain />}></Route>
+          </Routes>
+          <Paper
+            sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+            elevation={3}
+          >
+            <NavBar></NavBar>
+          </Paper>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 

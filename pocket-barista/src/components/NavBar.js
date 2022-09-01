@@ -6,7 +6,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 const NavBar = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="navBar">
       <ButtonGroup variant="text" aria-label="text button group">
         <Button onClick={() => navigate("/")}>Home</Button>
         <Button onClick={() => navigate("/addnewbrew")}>New Brew</Button>

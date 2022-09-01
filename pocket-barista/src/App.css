@@ -1,3 +1,5 @@
+@import "./stylesheets/data.css";
+
 .App {
   text-align: center;
 }
@@ -17,6 +19,7 @@
 .brewGuides button {
   height: 100px;
   width: 100px;
+  background-color: #6b0504;
 }
 
 .past-cup {
@@ -32,4 +35,13 @@
 
 .coffeeOfTheMonth img {
   height: 120px;
+}
+
+.featuredGuides button {
+  height: 60px;
+  background-color: #6b0504;
+}
+
+.navBar {
+  height: 50px;
 }
