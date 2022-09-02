@@ -23,7 +23,11 @@ const Data = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          sx={{ backgroundColor: "#001514", color: "#FBFFFE", width: "100%" }}
+        >
           <h1>Data</h1>
         </Grid>
         <Grid item xs={9}>

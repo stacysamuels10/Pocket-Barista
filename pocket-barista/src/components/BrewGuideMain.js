@@ -15,6 +15,12 @@ const BrewGuideMain = () => {
         justifyContent="center"
         alignItems="center"
       >
+        <Grid
+          item
+          sx={{ backgroundColor: "#001514", color: "#FBFFFE", width: "100%" }}
+        >
+          <h1>Guides</h1>
+        </Grid>
         <Paper elevation={0}>
           <Button
             variant="contained"
