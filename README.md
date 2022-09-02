@@ -14,8 +14,6 @@ Published September 2022
 
 [Email Me](stacy.samuels10@gmail.com) | [GitHub](https://github.com/stacysamuels10/Pocket-Barista/tree/main/pocket-barista) | [LinkedIn](https://www.linkedin.com/in/stacy-samuels/)
 
-[You can view an article I wrote about the making of this project here]()
-
 ---
 
 ## **Requirements**
