@@ -40,8 +40,10 @@
   background-color: #6b0504;
 }
 
-.navBar {
+.navBar Button {
+  background-color: rgba(251, 255, 254, 1);
   height: 50px;
+  opacity: 1;
 }
 
 .aeropress {
@@ -66,4 +68,8 @@ a:visited {
 
 .data-main p {
   font-size: 20px;
+}
+
+.dropdown {
+  margin-top: 3px;
 }

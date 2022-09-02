@@ -15,6 +15,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
+import Grid from "@mui/material/Grid";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -22,28 +23,46 @@ const Homepage = () => {
   const coffee = useSelector((state) => state.coffeeReducer.pastCoffeeBags);
   return (
     <div>
-      <div className="top-nav">
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-standard-label">Add</InputLabel>
-          <Select
-            name="add"
-            labelId="demo-simple-select-standard-label"
-            id="demo-simple-select-standard"
-            label="Add"
-            onChange={(e) => {
-              window.location.href = e.target.value;
-            }}
-          >
-            <MenuItem value="/addnewbrew"> New Brew</MenuItem>
-            <MenuItem value="/addnewcoffee">New Coffee</MenuItem>
-            <MenuItem value="/addnewbrewer">New Brewer</MenuItem>
-            <MenuItem value="/addnewgrinder">New Grinder</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
-      <div className="welcome">
-        <h1>Welcome to Pocket Barista</h1>
-      </div>
+      <Grid
+        container
+        spacing={2}
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        backgroundColor="#001514"
+        color="#FBFFFE"
+      >
+        <Grid item>
+          <h1>Welcome to Pocket Barista</h1>
+        </Grid>
+      </Grid>
+      <FormControl
+        variant="standard"
+        sx={{
+          m: 1,
+          minWidth: 120,
+          backgroundColor: "#FBFFFE",
+          color: "#001514",
+        }}
+      >
+        <InputLabel id="demo-simple-select-standard-label">Add</InputLabel>
+        <Select
+          className="dropdown"
+          name="add"
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          label="Add"
+          onChange={(e) => {
+            window.location.href = e.target.value;
+          }}
+        >
+          <MenuItem value="/addnewbrew"> New Brew</MenuItem>
+          <MenuItem value="/addnewcoffee">New Coffee</MenuItem>
+          <MenuItem value="/addnewbrewer">New Brewer</MenuItem>
+          <MenuItem value="/addnewgrinder">New Grinder</MenuItem>
+        </Select>
+      </FormControl>
+
       <div className="brewHistory">
         <Accordion>
           <AccordionSummary

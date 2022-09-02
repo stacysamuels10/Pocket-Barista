@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import {
   NewBrewerState,
   setBrewerName,
@@ -21,33 +23,54 @@ const AddNewBrewer = () => {
   const brewer = useSelector((state) => state.brewerReducer.brewer);
   return (
     <div>
-      <div className="title">
-        <h1>Add New Brewer</h1>
-        <Button onClick={() => handleClick(dispatch, brewer, navigate)}>
-          Save
-        </Button>
-      </div>
-      <div className="brewer">
-        <TextField
-          id="filled-basic"
-          label="Name"
-          variant="filled"
-          onChange={(e) => setBrewerName(dispatch, e.target.value)}
-        />
-        <TextField
-          id="filled-basic"
-          label="Brand"
-          variant="filled"
-          onChange={(e) => setBrewerBrand(dispatch, e.target.value)}
-        />
-        <label htmlFor="type">Type:</label>
-        <TextField
-          id="filled-basic"
-          label="Type"
-          variant="filled"
-          onChange={(e) => setBrewerType(dispatch, e.target.value)}
-        />
-      </div>
+      <Box className="aeropress">
+        <Grid
+          container
+          spacing={4}
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid
+            item
+            sx={{ backgroundColor: "#001514", color: "#FBFFFE", width: "100%" }}
+          >
+            <h1>Add New Brewer</h1>
+          </Grid>
+          <Grid item>
+            <Button
+              variant="contained"
+              onClick={() => handleClick(dispatch, brewer, navigate)}
+            >
+              Save
+            </Button>
+          </Grid>
+          <Grid item>
+            <TextField
+              id="filled-basic"
+              label="Name"
+              variant="filled"
+              onChange={(e) => setBrewerName(dispatch, e.target.value)}
+            />
+          </Grid>{" "}
+          <Grid item>
+            <TextField
+              id="filled-basic"
+              label="Brand"
+              variant="filled"
+              onChange={(e) => setBrewerBrand(dispatch, e.target.value)}
+            />
+          </Grid>{" "}
+          <Grid item>
+            <TextField
+              id="filled-basic"
+              label="Type"
+              variant="filled"
+              onChange={(e) => setBrewerType(dispatch, e.target.value)}
+            />
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };

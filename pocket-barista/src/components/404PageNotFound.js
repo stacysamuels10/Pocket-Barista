@@ -9,15 +9,20 @@ const PageNotFound = () => {
     <div>
       <Grid
         container
+        spacing={2}
         direction="column"
         justifyContent="center"
         alignItems="center"
+        backgroundColor="#001514"
+        color="#FBFFFE"
       >
-        <h1>PAGE NOT FOUND</h1>
-        <Button size="large" variant="contained" onClick={() => navigate("/")}>
-          HOME
-        </Button>
+        <Grid item>
+          <h1>PAGE NOT FOUND</h1>
+        </Grid>
       </Grid>
+      <Button size="large" variant="contained" onClick={() => navigate("/")}>
+        HOME
+      </Button>
     </div>
   );
 };
