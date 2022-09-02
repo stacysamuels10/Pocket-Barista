@@ -20,7 +20,7 @@ Published September 2022
 
 ## **Requirements**
 
-"Pocket Barista" is deployed online, so all you need is this [link](https://63115d9f1f356f1d0a28de6d--pocket-barista.netlify.app/). It is designed to be used on your phone for ease of use while your brewing your coffee so it is best viewed on a mobile device. This site is a personal project to advance my skills in React/Redux. I was inspired to recreate an app that I use often called Coffee Book. The deployment is meant for ease of viewing on my personal portfolio and not intended to infringe on copyrighted material.
+"Pocket Barista" is deployed online, so all you need is this [link](https://63115d9f1f356f1d0a28de6d--pocket-barista.netlify.app/). It is designed to be used on your phone for ease of use while you're brewing your coffee so it is best viewed on a mobile device. This site is a personal project to advance my skills in React/Redux. I was inspired to recreate an app that I use often called Coffee Book. The deployment is meant for ease of viewing on my personal portfolio and not intended to infringe on copyrighted material.
 
 ## How Pocket Barista Works
 
