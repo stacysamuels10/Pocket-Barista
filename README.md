@@ -26,7 +26,7 @@ Published September 2022
 
 ---
 
-### Wesbite Overview
+### Website Overview
 
 "Pocket Barista" utilizes a front-end library consisting of React and Redux. Users can track every cup they brew, every bag of coffee they buy, and every brewer and grinder they own. They can also learn new methods of brewing through brew guides and each month new roasters are featured on the homepage. Users can also access their data using redux persist(as long as you are on the same browser session) to view every past brew and bag so they can make that 5 star cup over and over again. The "Pocket Barista" is all about creating an app that can be used by people who are passionate about coffee and on that forever quest for the perfect cup of coffee.
 
