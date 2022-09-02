@@ -78,12 +78,12 @@ Here are some ways I would continue to develop "Pocket Barista":
 
 <img src="src/assets/pocket-barista-homepage.png"
 alt="Home Page"
-width="200" height="400"><img src="src/assets/pocket-barista-new-brew.png"
+width="220" height="400"><img src="src/assets/pocket-barista-new-brew.png"
 alt="New Brew"
-width="200" height="400"><img src="src/assets/pocket-barista-guides.png"
+width="220" height="400"><img src="src/assets/pocket-barista-guides.png"
 alt="Guides"
-width="200" height="400"><img src="src/assets/pocket-barista-data.png"
+width="220" height="400"><img src="src/assets/pocket-barista-data.png"
 alt="Data"
-width="200" height="400"><img src="src/assets/pocket-barista-brew-guide.png"
+width="220" height="400"><img src="src/assets/pocket-barista-brew-guide.png"
 alt="Chemex Brew Guide"
-width="200" height="400">
+width="220" height="400">
